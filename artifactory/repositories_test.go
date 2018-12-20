@@ -57,6 +57,7 @@ func Test_Repositories(t *testing.T) {
 					Type:        String("LOCAL"),
 					Description: String("Local repository for in-house libraries"),
 					URL:         String("http://localhost:8081/artifactory/libs-releases-local"),
+					PackageType: String("NuGet"),
 				}
 
 				data, _ := ioutil.ReadFile("fixtures/repositories/repositories.json")
