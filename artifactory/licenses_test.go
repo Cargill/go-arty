@@ -88,7 +88,7 @@ func Test_Licenses(t *testing.T) {
 			g.It("- should return valid string for HALicenses with String()", func() {
 				actual := &HALicenses{
 					Licenses: &[]HALicense{
-						HALicense{
+						{
 							Type:         String("Enterprise"),
 							ValidThrough: String("May 15, 2018"),
 							LicensedTo:   String("JFrog"),
@@ -97,7 +97,7 @@ func Test_Licenses(t *testing.T) {
 							NodeURL:      String("http://localhost:8081/artifactory"),
 							Expired:      Bool(false),
 						},
-						HALicense{
+						{
 							Type:         String("Enterprise"),
 							ValidThrough: String("May 15, 2018"),
 							LicensedTo:   String("JFrog"),

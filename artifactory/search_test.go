@@ -52,10 +52,10 @@ func Test_Search(t *testing.T) {
 			g.It("- should return valid string for GAVCResponse with String()", func() {
 				actual := &GAVCResponse{
 					Results: &[]File{
-						File{
+						{
 							URI: String("http://localhost:8081/artifactory/api/storage/local-repo1/folder/file.json"),
 						},
-						File{
+						{
 							URI: String("http://localhost:8081/artifactory/api/storage/local-repo1/folder/foo.txt"),
 						},
 					},

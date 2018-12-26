@@ -75,12 +75,12 @@ func Test_Scan(t *testing.T) {
 						TotalAlerts:    String("int"),
 					},
 					Alerts: &[]ScanAlert{
-						ScanAlert{
+						{
 							Created:     &Timestamp{time.Date(2011, time.November, 11, 11, 11, 11, 0, time.UTC)},
 							TopSeverity: String("string"),
 							WatchName:   String("string"),
 							Issues: &[]ScanIssue{
-								ScanIssue{
+								{
 									Created:     &Timestamp{time.Date(2012, time.December, 12, 12, 12, 12, 0, time.UTC)},
 									Cve:         String("string"),
 									Description: String("string"),
@@ -89,7 +89,7 @@ func Test_Scan(t *testing.T) {
 									Summary:     String("string"),
 									Type:        String("string"),
 									ImpactedArtifacts: &[]ScanImpactedArtifact{
-										ScanImpactedArtifact{
+										{
 											Depth:       String("int"),
 											DisplayName: String("string"),
 											Name:        String("string"),
@@ -99,7 +99,7 @@ func Test_Scan(t *testing.T) {
 											Sha1:        String("string"),
 											Sha256:      String("string"),
 											InfectedFiles: &[]ScanInfectedFile{
-												ScanInfectedFile{
+												{
 													ComponentID: String("string"),
 													Depth:       String("int"),
 													DisplayName: String("string"),
@@ -110,9 +110,9 @@ func Test_Scan(t *testing.T) {
 													Sha1:        String("string"),
 													Sha256:      String("string"),
 													Details: &[]ScanDetail{
-														ScanDetail{
+														{
 															BannedLicenses: &[]ScanBannedLicense{
-																ScanBannedLicense{
+																{
 																	AlertType:   String("string"),
 																	Description: String("string"),
 																	ID:          &struct{}{},
@@ -122,7 +122,7 @@ func Test_Scan(t *testing.T) {
 															},
 															Child: String("string"),
 															Vulnerabilities: &[]ScanVulnerability{
-																ScanVulnerability{
+																{
 																	AlertType:   String("string"),
 																	Description: String("string"),
 																	ID:          &struct{}{},
@@ -141,7 +141,7 @@ func Test_Scan(t *testing.T) {
 						},
 					},
 					Licenses: &[]ScanLicense{
-						ScanLicense{
+						{
 							Name:        String("string"),
 							Components:  &[]string{"string"},
 							FullName:    String("string"),

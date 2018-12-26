@@ -57,8 +57,8 @@ func Test_Storage(t *testing.T) {
 					ModifiedBy:   String("admin"),
 					LastUpdated:  &Timestamp{time.Date(2012, time.December, 12, 12, 12, 12, 0, time.UTC)},
 					Children: &[]Child{
-						Child{URI: String("/file.json"), Folder: String("true")},
-						Child{URI: String("/foo.txt"), Folder: String("false")},
+						{URI: String("/file.json"), Folder: String("true")},
+						{URI: String("/foo.txt"), Folder: String("false")},
 					},
 				}
 
@@ -121,7 +121,7 @@ func Test_Storage(t *testing.T) {
 						FreeSpace:        String("172.06 GB (84.23%)"),
 					},
 					RepositoriesSummaryList: &[]RepositoriesSummary{
-						RepositoriesSummary{
+						{
 							RepoKey:      String("plugins-release"),
 							RepoType:     String("VIRTUAL"),
 							FoldersCount: Int(0),
@@ -131,7 +131,7 @@ func Test_Storage(t *testing.T) {
 							PackageType:  String("Maven"),
 							Percentage:   String("0%"),
 						},
-						RepositoriesSummary{
+						{
 							RepoKey:      String("repo"),
 							RepoType:     String("VIRTUAL"),
 							FoldersCount: Int(0),
@@ -141,7 +141,7 @@ func Test_Storage(t *testing.T) {
 							PackageType:  String("Generic"),
 							Percentage:   String("0%"),
 						},
-						RepositoriesSummary{
+						{
 							RepoKey:      String("TOTAL"),
 							RepoType:     String("NA"),
 							FoldersCount: Int(92172),
@@ -209,7 +209,7 @@ func Test_Storage(t *testing.T) {
 			g.It("- should return valid string for ItemProperties with String()", func() {
 				actual := &ItemProperties{
 					URI:        String("http://localhost:8081/artifactory/api/storage/local-repo1/folder/file.json"),
-					Properties: &map[string][]string{"p1": []string{"v1", "v2", "v3"}},
+					Properties: &map[string][]string{"p1": {"v1", "v2", "v3"}},
 				}
 
 				data, _ := ioutil.ReadFile("fixtures/storage/properties.json")
@@ -225,14 +225,14 @@ func Test_Storage(t *testing.T) {
 					URI:     String("http://localhost:8081/artifactory/api/storage/local-repo1/folder"),
 					Created: &Timestamp{time.Date(2010, time.October, 10, 10, 10, 10, 0, time.UTC)},
 					Files: &[]FileListItem{
-						FileListItem{
+						{
 							URI:          String("/file.json"),
 							Size:         Int(253207),
 							LastModified: &Timestamp{time.Date(2011, time.November, 11, 11, 11, 11, 0, time.UTC)},
 							Folder:       Bool(false),
 							SHA1:         String("ECB252044B5EA0F679EE78EC1A12904739E2904D"),
 						},
-						FileListItem{
+						{
 							URI:          String("/foo.txt"),
 							Size:         Int(253100),
 							LastModified: &Timestamp{time.Date(2012, time.December, 12, 12, 12, 12, 0, time.UTC)},
