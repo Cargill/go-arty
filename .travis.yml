@@ -14,11 +14,7 @@ before_install:
   - go get github.com/mattn/goveralls
   - go get github.com/go-playground/overalls
 
-before_script:
-  - GO_FILES=$(find . -iname '*.go' | grep -v /vendor/)
-
 script:
-  - if [ -n "$(gofmt -s -l $GO_FILES)" ]; then echo "gofmt the following files:"; gofmt -s -l $GO_FILES; exit 1; fi
   - go test -v -race ./...
   - go vet ./... && git diff --exit-code; code=$?; git checkout -- .; (exit $code) # Check that go vet ./... produces a zero diff; clean up any changes afterwards.
 

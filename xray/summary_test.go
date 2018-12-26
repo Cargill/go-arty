@@ -49,7 +49,7 @@ func Test_Summary(t *testing.T) {
 			g.It("- should return valid string for SummaryResponse with String()", func() {
 				actual := &SummaryResponse{
 					Artifacts: &[]SummaryArtifact{
-						{
+						SummaryArtifact{
 							General: &SummaryGeneral{
 								ComponentID: String("gav://org.artifactory.pro:artifactory-pro-war:4.14.0"),
 								Name:        String("artifactory-pro.zip"),
@@ -58,7 +58,7 @@ func Test_Summary(t *testing.T) {
 								Sha256:      String("d160c68ed8879ae42756e159daec1dd7ecfd53b6192321656b72715e20d46dd2"),
 							},
 							Issues: &[]SummaryIssue{
-								{
+								SummaryIssue{
 									Summary:     String("FileSystemBytecodeCache in Jinja2 2.7.2 does not properly create temporary directories"),
 									Description: String("this is the description of the issue"),
 									IssueType:   String("security"),
@@ -69,7 +69,7 @@ func Test_Summary(t *testing.T) {
 								},
 							},
 							Licenses: &[]SummaryLicense{
-								{
+								SummaryLicense{
 									Name:        String("MIT"),
 									FullName:    String("The MIT License"),
 									MoreInfoURL: &[]string{"https://opensource.org/licenses/MIT"},
@@ -79,7 +79,7 @@ func Test_Summary(t *testing.T) {
 										"some-component-3",
 									},
 								},
-								{
+								SummaryLicense{
 									Name:        String("AGPL-3.0"),
 									FullName:    String("GNU AFFERO GENERAL PUBLIC LICENSE, Version 3"),
 									MoreInfoURL: &[]string{"https://opensource.org/licenses/AGPL-3.0"},
@@ -88,7 +88,7 @@ func Test_Summary(t *testing.T) {
 										"some-component-5",
 									},
 								},
-								{
+								SummaryLicense{
 									Name: String("unknown"),
 									Components: &[]string{
 										"some-component-6",
@@ -99,7 +99,7 @@ func Test_Summary(t *testing.T) {
 						},
 					},
 					Errors: &[]SummaryError{
-						{
+						SummaryError{
 							Error:      String("Artifact doesn't exist or not indexed in Xray"),
 							Identifier: String("4e39f19212597312ee02db873847bcb12c17cc639898bd2fd9b6a4aff16690e5"),
 						},

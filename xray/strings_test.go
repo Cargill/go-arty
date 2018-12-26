@@ -112,7 +112,7 @@ func TestString(t *testing.T) {
 	}{
 		{ScanArtifactResponse{Info: String("test")}, `xray.ScanArtifactResponse{Info:"test"}`},
 		{ScanBuildResponse{Summary: &ScanSummary{Message: String("test")}}, `xray.ScanBuildResponse{Summary:xray.ScanSummary{Message:"test"}}`},
-		{SummaryResponse{Errors: &[]SummaryError{{Error: String("test")}}}, `xray.SummaryResponse{Errors:[xray.SummaryError{Error:"test"}]}`},
+		{SummaryResponse{Errors: &[]SummaryError{SummaryError{Error: String("test")}}}, `xray.SummaryResponse{Errors:[xray.SummaryError{Error:"test"}]}`},
 		{Ping{Status: String("test")}, `xray.Ping{Status:"test"}`},
 		{Versions{XrayVersion: String("test")}, `xray.Versions{XrayVersion:"test"}`},
 		{Timestamp{time.Date(2006, time.January, 02, 15, 04, 05, 0, time.UTC)}, `2006-01-02 15:04:05 +0000 UTC`},
